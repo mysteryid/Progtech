@@ -1,8 +1,10 @@
-package com.example.progtech;
+package com.example.progtech.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.progtech.R;
 
 public class MainActivity extends AppCompatActivity {
 
