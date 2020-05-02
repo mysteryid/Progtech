@@ -1,4 +1,4 @@
-package com.example.progtech.activities;
+package com.example.progtech.activities.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.progtech.R;
-import com.example.progtech.fragment.HomeFragment;
-import com.example.progtech.fragment.SubjectFragment;
-import com.example.progtech.fragment.TipsFragment;
+import com.example.progtech.activities.fragments.HomeFragment;
+import com.example.progtech.activities.fragments.SubjectFragment;
+import com.example.progtech.activities.fragments.TipsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,39 +26,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar_main);
-        toolbar.setTitle("home");
-        setSupportActionBar(toolbar);
+
 
         bottomNavigationView = findViewById(R.id.bottom_nav_main);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem Item) {
                 Fragment fragment;
+
                 switch (Item.getItemId()) {
                     case R.id.menu_home:
-
-                        toolbar.setTitle("Home");
+                        toolbar.setTitle(R.string.menu_home);
                         setSupportActionBar(toolbar);
-                        fragment = new HomeFragment();
+                        fragment= new HomeFragment();
                         loadFragment(fragment);
                         return true;
 
                     case R.id.menu_subject:
-
-                        toolbar.setTitle("Subject");
+                        toolbar.setTitle(R.string.menu_subject);
                         setSupportActionBar(toolbar);
                         fragment = new SubjectFragment();
                         loadFragment(fragment);
                         return true;
 
                     case R.id.menu_tips:
-
-                        toolbar.setTitle("Tips");
+                        toolbar.setTitle(R.string.menu_tips);
                         setSupportActionBar(toolbar);
-                        fragment = new TipsFragment();
+                        fragment= new TipsFragment();
                         loadFragment(fragment);
                         return true;
                 }
+
                 return false;
             }
         });
@@ -74,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        //Cara pertama
-        //toolbar.setTitle(R.string.menu_home);
-        //setSupportActionBar(toolbar);
+        //cara 1
         bottomNavigationView.setSelectedItemId(R.id.menu_home);
 
-        //Cara kedua
+        //cara 2
+        //toolbar.setTitle(R.string.menu_home);
+        //setSupportActionBar(toolbar);
         //Fragment fragment = new HomeFragment();
         //loadFragment(fragment);
     }
