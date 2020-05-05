@@ -9,4 +9,8 @@
     <string name="id">01</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="Subject">Subject</string>
+    <string name="SKS">Jumlah SKS</string>
+    <string name="AddData">Add Data</string>
+    <string name="test">tes</string>
 </resources>
