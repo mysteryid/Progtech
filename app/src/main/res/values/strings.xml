@@ -1,16 +1,12 @@
 <resources>
-    <string name="app_name">Progtech</string>
+    <string name="app_name">Educastion</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="menu_subject">Subject</string>
-    <string name="menu_home">Home</string>
-    <string name="menu_tips">Tips</string>
-    <string name="id">01</string>
-    <string name="name">Name</string>
-    <string name="email">Email</string>
-    <string name="Subject">Subject</string>
-    <string name="SKS">Jumlah SKS</string>
-    <string name="AddData">Add Data</string>
-    <string name="test">tes</string>
+    <string name="Home">home</string>
+    <string name="Subject">subject</string>
+    <string name="Tips">tips</string>
+    <string name="Add_Subject">Add Subject</string>
+    <string name="Mata_Kuliah">Mata Kuliah</string>
+    <string name="Jumlah_SKS">Jumlah SKS</string>
+    <string name="SKS">sks</string>
 </resources>

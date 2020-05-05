@@ -1,79 +1,78 @@
 package com.example.progtech.activities.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.progtech.R;
-import com.example.progtech.activities.DatabaseHelper;
 import com.google.android.material.textfield.TextInputLayout;
+import com.example.progtech.activities.adapter.DatabaseHelper;
 
-public class AddSubject extends AppCompatActivity {
+public class AddSubject extends AppCompatActivity implements TextWatcher{
 
-    DatabaseHelper mDatabaseHelper;
-    TextInputLayout input_subject, input_jumlah_sks;
-    Button btnAdd, btnViewData;
+    Toolbar toolbar;
+    TextInputLayout inputSubject, inputSks;
+    Button button_add_subject;
+    DatabaseHelper databaseHelper;
+    String subject,sks;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_subject);
-        input_subject = findViewById(R.id.input_subject);
-        input_jumlah_sks = findViewById(R.id.input_jumlah_sks);
-        btnAdd = findViewById(R.id.btn_add_subject);
-        btnViewData = findViewById(R.id.btn_view_data);
-        mDatabaseHelper = new DatabaseHelper(this);
+        inputSubject = findViewById(R.id.input_subject);
+        inputSks = findViewById(R.id.input_sks);
+        button_add_subject = findViewById(R.id.btn_add_subject);
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+        databaseHelper = new DatabaseHelper(this);
+
+        inputSubject.getEditText().addTextChangedListener((TextWatcher) this);
+        inputSks.getEditText().addTextChangedListener(this);
+
+
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String newEntry1 = input_subject.getEditText().toString().trim();
-                String newEntry2 = input_jumlah_sks.getEditText().toString().trim();
-                if (newEntry1.length() != 0) {
-                    AddData(newEntry1);
-                    newEntry1 = "";
-                } else {
-                    toastMessage("You Must put something in the Subject field!");
-                }
-                if (newEntry2.length() != 0) {
-                    AddData(newEntry2);
-                    newEntry2 = "";
-                } else {
-                    toastMessage("You Must put something in the SKS field!");
-                }
+                finish();
             }
         });
-
-        btnViewData.setOnClickListener(new View.OnClickListener() {
+        button_add_subject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddSubject.this, ListDataActivity.class);
-                startActivity(intent);
+                subject = inputSubject.getEditText().getText().toString().trim();
+                sks = inputSks.getEditText().getText().toString().trim();
+                long id = databaseHelper.insertData(subject,sks);
+                finish();
             }
         });
     }
 
-    public void AddData(String newEntry) {
-        boolean insertData = mDatabaseHelper.addData(newEntry);
 
-        if (insertData) {
-            toastMessage("Data Successfully Inserted!");
-        } else {
-            toastMessage("Something went wrong");
-        }
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
     }
 
-    /**
-     * customizable toast
-     *
-     * @param message
-     */
-    private void toastMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+
+    @Override
+    public void finish() {
+        Intent returnIntent = new Intent();
+        setResult(RESULT_OK, returnIntent);
+        super.finish();
     }
 }
