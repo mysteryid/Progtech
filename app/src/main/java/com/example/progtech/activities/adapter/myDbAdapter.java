@@ -24,7 +24,16 @@ public class myDbAdapter {
         ContentValues contentValues = new ContentValues();
         contentValues.put(myDbHelper.TITLE, title);
         contentValues.put(myDbHelper.NOTE, note);
-        contentValues.put(myDbHelper.NOTE, note);
+        contentValues.put(myDbHelper.SAA1_NILAI, input_nilai_saa1);
+        contentValues.put(myDbHelper.SAA1_BOBOT, input_bobot_saa1);
+        contentValues.put(myDbHelper.SAA2_NILAI, input_nilai_saa2);
+        contentValues.put(myDbHelper.SAA2_BOBOT, input_bobot_saa2);
+        contentValues.put(myDbHelper.SAA3_NILAI, input_nilai_saa3);
+        contentValues.put(myDbHelper.SAA3_BOBOT, input_bobot_saa3);
+        contentValues.put(myDbHelper.UTS_NILAI, input_nilai_uts);
+        contentValues.put(myDbHelper.UTS_BOBOT, input_bobot_uts);
+        contentValues.put(myDbHelper.UAS_NILAI, input_nilai_uas);
+        contentValues.put(myDbHelper.UAS_BOBOT, input_bobot_uas);
         long id = dbb.insert(myDbHelper.TABLE_NAME, null, contentValues);
         return id;
     }
