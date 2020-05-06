@@ -1,19 +1,19 @@
 package com.example.progtech.activities.model;
 
 public class Subject {
-    private String mataKuliah, sks;
+    private String mata, sks;
 
-    public Subject(String matakuliah, String sks) {
-        this.mataKuliah = matakuliah;
+    public Subject(String mata, String sks) {
+        this.mata = mata;
         this.sks = sks;
     }
 
-    public String getMataKuliah() {
-        return mataKuliah;
+    public String getMata() {
+        return mata;
     }
 
-    public void setMataKuliah(String mataKuliah) {
-        this.mataKuliah = mataKuliah;
+    public void setMata(String mata) {
+        this.mata = mata;
     }
 
     public String getSks() {

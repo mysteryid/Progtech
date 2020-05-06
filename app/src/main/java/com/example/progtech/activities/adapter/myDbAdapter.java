@@ -12,26 +12,28 @@ import com.example.progtech.activities.model.Subject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseHelper {
+public class myDbAdapter {
     myDbHelper myhelper;
-    public DatabaseHelper(Context context)
+    public myDbAdapter(Context context)
     {
         myhelper = new myDbHelper(context);
     }
 
-    public long insertData(String subject, String sks)
+    public long insertData(String title, String note)
     {
         SQLiteDatabase dbb = myhelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(myDbHelper.SUBJECT, subject);
-        contentValues.put(myDbHelper.SKS, sks);
+        contentValues.put(myDbHelper.TITLE, title);
+        contentValues.put(myDbHelper.NOTE, note);
         long id = dbb.insert(myDbHelper.TABLE_NAME, null , contentValues);
         return id;
     }
 
-    public List<Subject> allPlayers() {
-        List<Subject> ArrayList = new ArrayList<>();
-        String selectQuery = "SELECT * FROM subject";
+//
+
+    public List<Subject> allPlayers(){
+        List<Subject> users = new ArrayList<>();
+        String selectQuery = "SELECT * FROM user";
         SQLiteDatabase db = myhelper.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -42,30 +44,30 @@ public class DatabaseHelper {
             if (cursor.moveToFirst()) {
                 do {
 //                Log.e("title", cursor.getString(1));
-                    Subject subject = new Subject(cursor.getString(1),cursor.getString(2));
+                    Subject user = new Subject(cursor.getString(1),cursor.getString(2));
 
-                    ArrayList.add(subject);
+                    users.add(user);
                 } while (cursor.moveToNext());
             }
         }
 
 
         db.close();
-        Log.e("list", ArrayList.toString());
-        return ArrayList;
+        Log.e("list", users.toString());
+        return users;
     }
 
 
     static class myDbHelper extends SQLiteOpenHelper
     {
         private static final String DATABASE_NAME = "myDatabase";    // Database Name
-        private static final String TABLE_NAME = "subject";   // Table Name
+        private static final String TABLE_NAME = "user";   // Table Name
         private static final int DATABASE_Version = 1;   // Database Version
         private static final String UID="_id";
-        private static final String SUBJECT = "subject";
-        private static final String SKS = "sks";
+        private static final String TITLE = "title";
+        private static final String NOTE = "note";
         private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+
-                " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+SUBJECT+" VARCHAR(255) ,"+SKS+" TEXT);";
+                " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+TITLE+" VARCHAR(255) ,"+ NOTE+" TEXT);";
         private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
         private Context context;
 
