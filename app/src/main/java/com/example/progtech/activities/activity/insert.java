@@ -1,4 +1,4 @@
-package com.example.progtech.activities.activities;
+package com.example.progtech.activities.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,29 +10,29 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.progtech.R;
 import com.google.android.material.textfield.TextInputLayout;
-import com.example.progtech.activities.adapter.DatabaseHelper;
+import com.example.progtech.R;
+import com.example.progtech.activities.adapter.myDbAdapter;
 
-public class AddSubject extends AppCompatActivity implements TextWatcher{
+public class insert extends AppCompatActivity implements TextWatcher{
 
     Toolbar toolbar;
-    TextInputLayout inputSubject, inputSks;
-    Button button_add_subject;
-    DatabaseHelper databaseHelper;
-    String subject,sks;
+    TextInputLayout inputTitle, inputNote;
+    Button button_save;
+    myDbAdapter helper;
+    String title,note;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_subject);
-        inputSubject = findViewById(R.id.input_subject);
-        inputSks = findViewById(R.id.input_sks);
-        button_add_subject = findViewById(R.id.btn_add_subject);
+        inputTitle = findViewById(R.id.input_subject);
+        inputNote = findViewById(R.id.input_sks);
+        button_save = findViewById(R.id.button_save);
 
-        databaseHelper = new DatabaseHelper(this);
+        helper = new myDbAdapter(this);
 
-        inputSubject.getEditText().addTextChangedListener((TextWatcher) this);
-        inputSks.getEditText().addTextChangedListener(this);
+        inputTitle.getEditText().addTextChangedListener((TextWatcher) this);
+        inputNote.getEditText().addTextChangedListener(this);
 
 
         toolbar = findViewById(R.id.toolbar);
@@ -42,12 +42,12 @@ public class AddSubject extends AppCompatActivity implements TextWatcher{
                 finish();
             }
         });
-        button_add_subject.setOnClickListener(new View.OnClickListener() {
+        button_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                subject = inputSubject.getEditText().getText().toString().trim();
-                sks = inputSks.getEditText().getText().toString().trim();
-                long id = databaseHelper.insertData(subject,sks);
+                title = inputTitle.getEditText().getText().toString().trim();
+                note = inputNote.getEditText().getText().toString().trim();
+                long id = helper.insertData(title,note);
                 finish();
             }
         });

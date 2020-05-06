@@ -41,12 +41,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final Subject user = notesList.get(position);
 
-        holder.tvTitle.setText(user.getMata());
-        holder.tvNote.setText(user.getSks());
+        holder.tvTitle.setText(user.getTitle());
+        holder.tvNote.setText(user.getNote());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, user.getMata(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, user.getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -63,8 +63,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
         public MyViewHolder(View view) {
             super(view);
-            tvTitle = view.findViewById(R.id.input_subject);
-            tvNote = view.findViewById(R.id.input_sks);
+            tvTitle = view.findViewById(R.id.title);
+            tvNote = view.findViewById(R.id.note);
         }
     }
 }

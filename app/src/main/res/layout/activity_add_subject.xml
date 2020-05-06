@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
         app:title="@string/Add_Subject"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@android:color/background_light" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_subject"
@@ -36,8 +36,8 @@
             android:hint="@string/Mata_Kuliah"
             android:maxLines="1"
             android:textAlignment="textStart"
-            android:textColor="?android:attr/textColorHint"
-            android:textColorHint="?android:attr/textColorHint"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textColorHint="?android:attr/textColorPrimary"
             android:textSize="24sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,7 +62,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_add_subject"
+        android:id="@+id/button_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -70,7 +70,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/colorPrimary"
         android:text="@string/Add_Subject"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/background_light"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

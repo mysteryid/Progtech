@@ -14,20 +14,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.progtech.R;
-import com.example.progtech.activities.adapter.DatabaseHelper;
-import com.example.progtech.activities.adapter.SubjectList;
-import com.example.progtech.activities.model.Subject;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.example.progtech.activities.activities.AddSubject;
-
+import com.example.progtech.R;
+import com.example.progtech.activities.model.Subject;
+import com.example.progtech.activities.adapter.RecycleAdapter;
+import com.example.progtech.activities.adapter.myDbAdapter;
+import com.example.progtech.activities.activity.insert;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubjectFragment extends Fragment {
-    private DatabaseHelper databaseHelper;
-    private List<Subject> nota = new ArrayList<>();
-    private SubjectList subjectList;
+    private myDbAdapter db;
+    private List<Subject> not = new ArrayList<>();
+    private RecycleAdapter adapter;
     FloatingActionButton button_add;
     RecyclerView recyclerView;
     View view;
@@ -38,20 +37,20 @@ public class SubjectFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_subject,container,false);
 
-        databaseHelper = new DatabaseHelper(getActivity());
+        db = new myDbAdapter(getActivity());
         recyclerView= view.findViewById(R.id.rv);
 
-        nota = databaseHelper.allPlayers();
-        if (nota.isEmpty()){
+        not = db.allPlayers();
+        if (not.isEmpty()){
             Toast.makeText(getActivity(),"No Data",Toast.LENGTH_SHORT).show();
         }
         else{
-            Log.e("main-list", nota.toString());
+            Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
             recyclerView.setLayoutManager(linearLayoutManager);
 
-            subjectList = new SubjectList(getActivity(), nota);
-            recyclerView.setAdapter(subjectList);
+            adapter = new RecycleAdapter(getActivity(), not);
+            recyclerView.setAdapter(adapter);
         }
 
 
@@ -59,7 +58,7 @@ public class SubjectFragment extends Fragment {
         button_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(new Intent(getActivity(), AddSubject.class), 1);
+                startActivityForResult(new Intent(getActivity(), insert.class), 1);
             }
         });
         return view;
@@ -68,20 +67,20 @@ public class SubjectFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        databaseHelper = new DatabaseHelper(getActivity());
+        db = new myDbAdapter(getActivity());
         recyclerView= view.findViewById(R.id.rv);
 
-        nota = databaseHelper.allPlayers();
-        if (nota.isEmpty()){
+        not = db.allPlayers();
+        if (not.isEmpty()){
             Toast.makeText(getActivity(),"No Data",Toast.LENGTH_SHORT).show();
         }
         else{
-            Log.e("main-list", nota.toString());
+            Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
             recyclerView.setLayoutManager(linearLayoutManager);
 
-            subjectList = new SubjectList(getActivity(), nota);
-            recyclerView.setAdapter(subjectList);
+            adapter = new RecycleAdapter(getActivity(), not);
+            recyclerView.setAdapter(adapter);
         }
     }
 
@@ -89,20 +88,20 @@ public class SubjectFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
-            databaseHelper = new DatabaseHelper(getActivity());
+            db = new myDbAdapter(getActivity());
             recyclerView= view.findViewById(R.id.rv);
 
-            nota = databaseHelper.allPlayers();
-            if (nota.isEmpty()){
+            not = db.allPlayers();
+            if (not.isEmpty()){
                 Toast.makeText(getActivity(),"No Data",Toast.LENGTH_SHORT).show();
             }
             else{
-                Log.e("main-list", nota.toString());
+                Log.e("main-list", not.toString());
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
                 recyclerView.setLayoutManager(linearLayoutManager);
 
-                subjectList = new SubjectList(getActivity(), nota);
-                recyclerView.setAdapter(subjectList);
+                adapter = new RecycleAdapter(getActivity(), not);
+                recyclerView.setAdapter(adapter);
             }
 
 

@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Educastion</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="Home">home</string>
     <string name="Subject">subject</string>
     <string name="Tips">tips</string>
