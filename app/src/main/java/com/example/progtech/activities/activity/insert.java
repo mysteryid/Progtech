@@ -21,6 +21,8 @@ public class insert extends AppCompatActivity implements TextWatcher{
     Button button_save;
     myDbAdapter helper;
     String title,note;
+    String input_nilai_saa1, input_nilai_saa2, input_nilai_saa3, input_nilai_uts, input_nilai_uas;
+    String input_bobot_saa1, input_bobot_saa2, input_bobot_saa3, input_bobot_uts, input_bobot_uas;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,18 @@ public class insert extends AppCompatActivity implements TextWatcher{
             public void onClick(View v) {
                 title = inputTitle.getEditText().getText().toString().trim();
                 note = inputNote.getEditText().getText().toString().trim();
-                long id = helper.insertData(title,note);
+                input_nilai_saa1 = inputNote.getEditText().getText().toString().trim();
+                input_bobot_saa1 = inputNote.getEditText().getText().toString().trim();
+                input_nilai_saa2 = inputNote.getEditText().getText().toString().trim();
+                input_bobot_saa2 = inputNote.getEditText().getText().toString().trim();
+                input_nilai_saa3 = inputNote.getEditText().getText().toString().trim();
+                input_bobot_saa3 = inputNote.getEditText().getText().toString().trim();
+                input_nilai_uts = inputNote.getEditText().getText().toString().trim();
+                input_bobot_uts = inputNote.getEditText().getText().toString().trim();
+                input_nilai_uas = inputNote.getEditText().getText().toString().trim();
+                input_bobot_uas = inputNote.getEditText().getText().toString().trim();
+
+                long id = helper.insertData(title, note, input_nilai_saa1, input_bobot_saa1, input_nilai_saa2, input_bobot_saa2, input_nilai_saa3, input_bobot_saa3, input_nilai_uts, input_bobot_uts, input_nilai_uas, input_bobot_uas);
                 finish();
             }
         });

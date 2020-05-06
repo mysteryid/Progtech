@@ -1,16 +1,22 @@
 package com.example.progtech.activities.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.progtech.R;
+import com.example.progtech.activities.activity.MainActivity;
+import com.example.progtech.activities.activity.SplashActivity;
+import com.example.progtech.activities.fragments.SubjectFragment;
 import com.example.progtech.activities.model.Subject;
 
 import java.util.List;
@@ -43,12 +49,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
         holder.tvTitle.setText(user.getTitle());
         holder.tvNote.setText(user.getNote());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, user.getTitle(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

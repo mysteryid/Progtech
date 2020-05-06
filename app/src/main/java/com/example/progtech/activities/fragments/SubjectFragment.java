@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,7 @@ public class SubjectFragment extends Fragment {
     private List<Subject> not = new ArrayList<>();
     private RecycleAdapter adapter;
     FloatingActionButton button_add;
+    Button button_edit;
     RecyclerView recyclerView;
     View view;
 
@@ -53,6 +55,12 @@ public class SubjectFragment extends Fragment {
             recyclerView.setAdapter(adapter);
         }
 
+        button_edit = view.findViewById(R.id.button_edit);
+        button_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
 
         button_add = (FloatingActionButton) view.findViewById(R.id.button_tambah);
         button_add.setOnClickListener(new View.OnClickListener() {
