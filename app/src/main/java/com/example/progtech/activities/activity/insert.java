@@ -14,21 +14,34 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.example.progtech.R;
 import com.example.progtech.activities.adapter.myDbAdapter;
 
-public class insert extends AppCompatActivity implements TextWatcher{
+public class insert extends AppCompatActivity implements TextWatcher {
 
     Toolbar toolbar;
     TextInputLayout inputTitle, inputNote;
+    TextInputLayout nsaa1,nsaa2,nsaa3,nsaa4,nsaa5;
+    TextInputLayout bsaa1,bsaa2,bsaa3,bsaa4,bsaa5;
     Button button_save;
     myDbAdapter helper;
-    String title,note;
+    String title, note;
     String input_nilai_saa1, input_nilai_saa2, input_nilai_saa3, input_nilai_uts, input_nilai_uas;
     String input_bobot_saa1, input_bobot_saa2, input_bobot_saa3, input_bobot_uts, input_bobot_uas;
+    String estimatedscore, finalscore;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_subject);
         inputTitle = findViewById(R.id.input_subject);
         inputNote = findViewById(R.id.input_sks);
+        nsaa1 = findViewById(R.id.input_nilai_saa1);
+        bsaa1 = findViewById(R.id.input_bobot_saa1);
+        nsaa2 = findViewById(R.id.input_nilai_saa2);
+        bsaa2 = findViewById(R.id.input_bobot_saa2);
+        nsaa3 = findViewById(R.id.input_nilai_saa3);
+        bsaa3 = findViewById(R.id.input_bobot_saa3);
+        nsaa4 = findViewById(R.id.input_nilai_uts);
+        bsaa4 = findViewById(R.id.input_bobot_uts);
+        nsaa5 = findViewById(R.id.input_nilai_uas);
+        bsaa5 = findViewById(R.id.input_bobot_uas);
         button_save = findViewById(R.id.button_save);
 
         helper = new myDbAdapter(this);
@@ -49,16 +62,16 @@ public class insert extends AppCompatActivity implements TextWatcher{
             public void onClick(View v) {
                 title = inputTitle.getEditText().getText().toString().trim();
                 note = inputNote.getEditText().getText().toString().trim();
-                input_nilai_saa1 = inputNote.getEditText().getText().toString().trim();
-                input_bobot_saa1 = inputNote.getEditText().getText().toString().trim();
-                input_nilai_saa2 = inputNote.getEditText().getText().toString().trim();
-                input_bobot_saa2 = inputNote.getEditText().getText().toString().trim();
-                input_nilai_saa3 = inputNote.getEditText().getText().toString().trim();
-                input_bobot_saa3 = inputNote.getEditText().getText().toString().trim();
-                input_nilai_uts = inputNote.getEditText().getText().toString().trim();
-                input_bobot_uts = inputNote.getEditText().getText().toString().trim();
-                input_nilai_uas = inputNote.getEditText().getText().toString().trim();
-                input_bobot_uas = inputNote.getEditText().getText().toString().trim();
+                input_nilai_saa1 = nsaa1.getEditText().getText().toString().trim();
+                input_bobot_saa1 = bsaa1.getEditText().getText().toString().trim();
+                input_nilai_saa2 = nsaa2.getEditText().getText().toString().trim();
+                input_bobot_saa2 = bsaa2.getEditText().getText().toString().trim();
+                input_nilai_saa3 = nsaa3.getEditText().getText().toString().trim();
+                input_bobot_saa3 = bsaa3.getEditText().getText().toString().trim();
+                input_nilai_uts = nsaa4.getEditText().getText().toString().trim();
+                input_bobot_uts = bsaa4.getEditText().getText().toString().trim();
+                input_nilai_uas = nsaa5.getEditText().getText().toString().trim();
+                input_bobot_uas = bsaa5.getEditText().getText().toString().trim();
 
                 long id = helper.insertData(title, note, input_nilai_saa1, input_bobot_saa1, input_nilai_saa2, input_bobot_saa2, input_nilai_saa3, input_bobot_saa3, input_nilai_uts, input_bobot_uts, input_nilai_uas, input_bobot_uas);
                 finish();

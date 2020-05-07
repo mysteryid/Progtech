@@ -4,8 +4,9 @@ public class Subject {
     private String title, note;
     private String nilai_saa1, nilai_saa2, nilai_saa3, nilai_uts, nilai_uas;
     private String bobot_saa1, bobot_saa2, bobot_saa3, bobot_uts, bobot_uas;
+    private String estimated, finalscore;
 
-    public Subject(String title, String note, String nilai_saa1, String nilai_saa2, String nilai_saa3, String nilai_uts, String nilai_uas, String bobot_saa1, String bobot_saa2, String bobot_saa3, String bobot_uts, String bobot_uas) {
+    public Subject(String title, String note, String nilai_saa1, String nilai_saa2, String nilai_saa3, String nilai_uts, String nilai_uas, String bobot_saa1, String bobot_saa2, String bobot_saa3, String bobot_uts, String bobot_uas, String estimated, String finalscore) {
         this.title = title;
         this.note = note;
         this.nilai_saa1 = nilai_saa1;
@@ -18,6 +19,12 @@ public class Subject {
         this.bobot_saa3 = bobot_saa3;
         this.bobot_uts = bobot_uts;
         this.bobot_uas = bobot_uas;
+        this.estimated = estimated;
+        this.finalscore = finalscore;
+    }
+
+    public Subject() {
+
     }
 
     public String getTitle() {
@@ -114,5 +121,21 @@ public class Subject {
 
     public void setBobot_uas(String bobot_uas) {
         this.bobot_uas = bobot_uas;
+    }
+
+    public String getEstimated() {
+        return estimated;
+    }
+
+    public void setEstimated(String estimated) {
+        this.estimated = estimated;
+    }
+
+    public String getFinalscore() {
+        return finalscore;
+    }
+
+    public void setFinalscore(String finalscore) {
+        this.finalscore = finalscore;
     }
 }

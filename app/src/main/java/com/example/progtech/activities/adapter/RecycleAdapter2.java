@@ -21,32 +21,31 @@ import com.example.progtech.activities.model.Subject;
 
 import java.util.List;
 
-public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
+public class RecycleAdapter2 extends RecyclerView.Adapter<RecycleAdapter2.MyViewHolder2> {
 
     private Context context;
     private List<Subject> notesList;
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_student, parent, false);
+                .inflate(R.layout.ip_student, parent, false);
 
-        return new MyViewHolder(itemView);
+        return new MyViewHolder2(itemView);
     }
 
-    public RecycleAdapter(Context context, List<Subject> notesList) {
+    public RecycleAdapter2(Context context, List<Subject> notesList) {
         this.context = context;
         this.notesList = notesList;
     }
 
     @Override
 
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder2 holder, int position) {
         final Subject user = notesList.get(position);
 
         holder.tvTitle.setText(user.getTitle());
-        holder.tvNote.setText(user.getNote());
     }
 
     @Override
@@ -54,14 +53,22 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         return notesList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder2 extends RecyclerView.ViewHolder {
         public TextView tvTitle;
-        public TextView tvNote;
 
-        public MyViewHolder(View view) {
+        public TextView tvAverage4;
+        public TextView tvAverage375;
+        public TextView tvAverage35;
+        public TextView tvAverage3;
+
+
+        public MyViewHolder2(View view) {
             super(view);
             tvTitle = view.findViewById(R.id.title);
-            tvNote = view.findViewById(R.id.note);
+            tvAverage4 = view.findViewById(R.id.average4);
+            tvAverage375 = view.findViewById(R.id.average375);
+            tvAverage35 = view.findViewById(R.id.average35);
+            tvAverage3 = view.findViewById(R.id.average3);
         }
     }
 }

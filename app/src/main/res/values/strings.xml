@@ -21,7 +21,13 @@
     <string name="Bobot">bobot (%)</string>
     <string name="input_nilai_saa1">Nilai SAA 1</string>
     <string name="input_nilai_saa2">Nilai SAA 2</string>
-    <string name="input_nilai_saa3">Nilai SAA 3</string>
+    <string name="input_nilai_saa3" translatable="false">Nilai SAA 3</string>
     <string name="input_nilai_uts">Nilai UTS</string>
     <string name="input_nilai_uas">Nilai UAS</string>
+    <string name="TargetGrade">Target Grade</string>
+    <string name="AverageScore">Average Score</string>
+    <string name="Four">4.00</string>
+    <string name="ThreeSevenFive">3.75</string>
+    <string name="ThreeFive">3.50</string>
+    <string name="Three">3.00</string>
 </resources>

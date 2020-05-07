@@ -13,10 +13,10 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Thread thread = new Thread() {
-            public void run(){
-                try{
+            public void run() {
+                try {
                     sleep(2000);
-                } catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
                     startActivity(new Intent(SplashActivity.this, com.example.progtech.activities.activity.MainActivity.class));

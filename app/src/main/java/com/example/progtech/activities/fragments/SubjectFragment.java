@@ -21,6 +21,7 @@ import com.example.progtech.activities.model.Subject;
 import com.example.progtech.activities.adapter.RecycleAdapter;
 import com.example.progtech.activities.adapter.myDbAdapter;
 import com.example.progtech.activities.activity.insert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,16 +38,15 @@ public class SubjectFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_subject,container,false);
+        view = inflater.inflate(R.layout.fragment_subject, container, false);
 
         db = new myDbAdapter(getActivity());
-        recyclerView= view.findViewById(R.id.rv);
+        recyclerView = view.findViewById(R.id.rv_home);
 
         not = db.allPlayers();
-        if (not.isEmpty()){
-            Toast.makeText(getActivity(),"No Data",Toast.LENGTH_SHORT).show();
-        }
-        else{
+        if (not.isEmpty()) {
+            Toast.makeText(getActivity(), "No Data", Toast.LENGTH_SHORT).show();
+        } else {
             Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
             recyclerView.setLayoutManager(linearLayoutManager);
@@ -76,13 +76,12 @@ public class SubjectFragment extends Fragment {
     public void onResume() {
         super.onResume();
         db = new myDbAdapter(getActivity());
-        recyclerView= view.findViewById(R.id.rv);
+        recyclerView = view.findViewById(R.id.rv_home);
 
         not = db.allPlayers();
-        if (not.isEmpty()){
-            Toast.makeText(getActivity(),"No Data",Toast.LENGTH_SHORT).show();
-        }
-        else{
+        if (not.isEmpty()) {
+            Toast.makeText(getActivity(), "No Data", Toast.LENGTH_SHORT).show();
+        } else {
             Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
             recyclerView.setLayoutManager(linearLayoutManager);
@@ -97,13 +96,12 @@ public class SubjectFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             db = new myDbAdapter(getActivity());
-            recyclerView= view.findViewById(R.id.rv);
+            recyclerView = view.findViewById(R.id.rv_home);
 
             not = db.allPlayers();
-            if (not.isEmpty()){
-                Toast.makeText(getActivity(),"No Data",Toast.LENGTH_SHORT).show();
-            }
-            else{
+            if (not.isEmpty()) {
+                Toast.makeText(getActivity(), "No Data", Toast.LENGTH_SHORT).show();
+            } else {
                 Log.e("main-list", not.toString());
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
                 recyclerView.setLayoutManager(linearLayoutManager);

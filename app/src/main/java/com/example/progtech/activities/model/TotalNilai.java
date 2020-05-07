@@ -1,38 +1,52 @@
 package com.example.progtech.activities.model;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.progtech.activities.adapter.myDbAdapter;
+
+import java.util.ArrayList;
+
 public class TotalNilai {
 
-    private int nilai;
-    private int bobot;
-    private int makul;
+    private String matakul;
+    private String Nilai;
+    private String Bobot;
 
-    public TotalNilai(int nilai, int bobot, int makul) {
-        this.nilai = nilai;
-        this.bobot = bobot;
-        this.makul = makul;
+    public TotalNilai() {
     }
 
-    public int getNilai() {
-        return nilai;
+    public String getMatakul() {
+        return matakul;
     }
 
-    public void setNilai(int nilai) {
-        this.nilai = nilai;
+    public void setMatakul(String matakul) {
+        this.matakul = matakul;
     }
 
-    public int getBobot() {
-        return bobot;
+    public String getNilai() {
+        return Nilai;
     }
 
-    public void setBobot(int bobot) {
-        this.bobot = bobot;
+    public void setNilai(String nilai) {
+        Nilai = nilai;
     }
 
-    public int getMakul() {
-        return makul;
+    public String getBobot() {
+        return Bobot;
     }
 
-    public void setMakul(int makul) {
-        this.makul = makul;
+    public void setBobot(String bobot) {
+        Bobot = bobot;
     }
 }
