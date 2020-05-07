@@ -30,10 +30,8 @@ public class SubjectFragment extends Fragment {
     private List<Subject> not = new ArrayList<>();
     private RecycleAdapter adapter;
     FloatingActionButton button_add;
-    Button button_edit;
     RecyclerView recyclerView;
     View view;
-
 
     @Nullable
     @Override
@@ -49,18 +47,11 @@ public class SubjectFragment extends Fragment {
         } else {
             Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-            //recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setLayoutManager(linearLayoutManager);
 
             adapter = new RecycleAdapter(getActivity(), not);
-//            recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(adapter);
         }
-
-        button_edit = view.findViewById(R.id.button_edit);
-        button_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
 
         button_add = (FloatingActionButton) view.findViewById(R.id.button_tambah);
         button_add.setOnClickListener(new View.OnClickListener() {
@@ -84,10 +75,10 @@ public class SubjectFragment extends Fragment {
         } else {
             Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-            //recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setLayoutManager(linearLayoutManager);
 
             adapter = new RecycleAdapter(getActivity(), not);
-            //recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(adapter);
         }
     }
 
@@ -104,13 +95,11 @@ public class SubjectFragment extends Fragment {
             } else {
                 Log.e("main-list", not.toString());
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-                //recyclerView.setLayoutManager(linearLayoutManager);
+                recyclerView.setLayoutManager(linearLayoutManager);
 
                 adapter = new RecycleAdapter(getActivity(), not);
-                //recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(adapter);
             }
-
-
         }
     }
 }

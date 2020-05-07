@@ -29,13 +29,10 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     View view;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
-
-
         return view;
     }
 
@@ -76,8 +73,6 @@ public class HomeFragment extends Fragment {
                 adapter = new RecycleAdapter2(getActivity(), not);
                 recyclerView.setAdapter(adapter);
             }
-
-
         }
     }
 }

@@ -2,21 +2,18 @@ package com.example.progtech.activities.adapter;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.progtech.activities.model.Subject;
-import com.example.progtech.activities.model.TotalNilai;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class myDbAdapter {
     myDbHelper myhelper;
-    TotalNilai totalNilai;
     private static SQLiteDatabase database;
     private static final String DATABASE_TABLE = "user";
 
@@ -198,9 +195,6 @@ public class myDbAdapter {
         return subject;
     }
 
-
-//
-
     public List<Subject> allPlayers() {
         List<Subject> users = new ArrayList<>();
 
@@ -220,7 +214,6 @@ public class myDbAdapter {
                 } while (cursor.moveToNext());
             }
         }
-
 
         db.close();
         Log.e("list", users.toString());

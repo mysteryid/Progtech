@@ -25,7 +25,6 @@ public class insert extends AppCompatActivity implements TextWatcher {
     String title, note;
     String input_nilai_saa1, input_nilai_saa2, input_nilai_saa3, input_nilai_uts, input_nilai_uas;
     String input_bobot_saa1, input_bobot_saa2, input_bobot_saa3, input_bobot_uts, input_bobot_uas;
-    String estimatedscore, finalscore;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +48,6 @@ public class insert extends AppCompatActivity implements TextWatcher {
         inputTitle.getEditText().addTextChangedListener((TextWatcher) this);
         inputNote.getEditText().addTextChangedListener(this);
 
-
         toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,13 +70,11 @@ public class insert extends AppCompatActivity implements TextWatcher {
                 input_bobot_uts = bsaa4.getEditText().getText().toString().trim();
                 input_nilai_uas = nsaa5.getEditText().getText().toString().trim();
                 input_bobot_uas = bsaa5.getEditText().getText().toString().trim();
-
                 long id = helper.insertData(title, note, input_nilai_saa1, input_bobot_saa1, input_nilai_saa2, input_bobot_saa2, input_nilai_saa3, input_bobot_saa3, input_nilai_uts, input_bobot_uts, input_nilai_uas, input_bobot_uas);
                 finish();
             }
         });
     }
-
 
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {

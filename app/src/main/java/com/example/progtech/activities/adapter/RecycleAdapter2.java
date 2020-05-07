@@ -1,22 +1,15 @@
 package com.example.progtech.activities.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.progtech.R;
-import com.example.progtech.activities.activity.MainActivity;
-import com.example.progtech.activities.activity.SplashActivity;
-import com.example.progtech.activities.fragments.SubjectFragment;
 import com.example.progtech.activities.model.Subject;
 
 import java.util.List;
@@ -46,6 +39,11 @@ public class RecycleAdapter2 extends RecyclerView.Adapter<RecycleAdapter2.MyView
         final Subject user = notesList.get(position);
 
         holder.tvTitle.setText(user.getTitle());
+        holder.tvNote.setText(user.getNote());
+        holder.tvAverage4.setText(user.getScore85());
+        holder.tvAverage375.setText(user.getScore80());
+        holder.tvAverage35.setText(user.getScore75());
+        holder.tvAverage3.setText(user.getScore70());
     }
 
     @Override
@@ -55,16 +53,17 @@ public class RecycleAdapter2 extends RecyclerView.Adapter<RecycleAdapter2.MyView
 
     public class MyViewHolder2 extends RecyclerView.ViewHolder {
         public TextView tvTitle;
+        public TextView tvNote;
 
         public TextView tvAverage4;
         public TextView tvAverage375;
         public TextView tvAverage35;
         public TextView tvAverage3;
 
-
         public MyViewHolder2(View view) {
             super(view);
             tvTitle = view.findViewById(R.id.title);
+            tvNote = view.findViewById(R.id.note);
             tvAverage4 = view.findViewById(R.id.average4);
             tvAverage375 = view.findViewById(R.id.average375);
             tvAverage35 = view.findViewById(R.id.average35);
