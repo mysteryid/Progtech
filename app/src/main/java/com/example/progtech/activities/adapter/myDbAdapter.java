@@ -92,7 +92,7 @@ public class myDbAdapter {
         if(nsaa5 != 0 || bsaa5 != 0){
             nilai = nilai + (nsaa5 * bsaa5 / 100);
         }
-         nilai1 = Long.toString(nilai);
+         nilai1 = "" + nilai;
 
         return nilai1;
     }
@@ -120,7 +120,7 @@ public class myDbAdapter {
         } else{
             gp = 0;
         }
-        gp2 = Long.toString(gp);
+        gp2 = "" + gp;
         return gp;
     }
 

@@ -49,10 +49,10 @@ public class SubjectFragment extends Fragment {
         } else {
             Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-            recyclerView.setLayoutManager(linearLayoutManager);
+            //recyclerView.setLayoutManager(linearLayoutManager);
 
             adapter = new RecycleAdapter(getActivity(), not);
-            recyclerView.setAdapter(adapter);
+//            recyclerView.setAdapter(adapter);
         }
 
         button_edit = view.findViewById(R.id.button_edit);
@@ -84,10 +84,10 @@ public class SubjectFragment extends Fragment {
         } else {
             Log.e("main-list", not.toString());
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-            recyclerView.setLayoutManager(linearLayoutManager);
+            //recyclerView.setLayoutManager(linearLayoutManager);
 
             adapter = new RecycleAdapter(getActivity(), not);
-            recyclerView.setAdapter(adapter);
+            //recyclerView.setAdapter(adapter);
         }
     }
 
@@ -104,10 +104,10 @@ public class SubjectFragment extends Fragment {
             } else {
                 Log.e("main-list", not.toString());
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-                recyclerView.setLayoutManager(linearLayoutManager);
+                //recyclerView.setLayoutManager(linearLayoutManager);
 
                 adapter = new RecycleAdapter(getActivity(), not);
-                recyclerView.setAdapter(adapter);
+                //recyclerView.setAdapter(adapter);
             }
 
 
