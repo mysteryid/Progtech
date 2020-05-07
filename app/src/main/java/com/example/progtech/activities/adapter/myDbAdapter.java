@@ -45,18 +45,66 @@ public class myDbAdapter {
     public long insertData(String title, String note, String input_nilai_saa1, String input_bobot_saa1, String input_nilai_saa2, String input_bobot_saa2, String input_nilai_saa3, String input_bobot_saa3, String input_nilai_uts, String input_bobot_uts, String input_nilai_uas, String input_bobot_uas) {
         SQLiteDatabase dbb = myhelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(myDbHelper.TITLE, title);
-        contentValues.put(myDbHelper.NOTE, note);
-        contentValues.put(myDbHelper.SAA1_NILAI, input_nilai_saa1);
-        contentValues.put(myDbHelper.SAA1_BOBOT, input_bobot_saa1);
-        contentValues.put(myDbHelper.SAA2_NILAI, input_nilai_saa2);
-        contentValues.put(myDbHelper.SAA2_BOBOT, input_bobot_saa2);
-        contentValues.put(myDbHelper.SAA3_NILAI, input_nilai_saa3);
-        contentValues.put(myDbHelper.SAA3_BOBOT, input_bobot_saa3);
-        contentValues.put(myDbHelper.UTS_NILAI, input_nilai_uts);
-        contentValues.put(myDbHelper.UTS_BOBOT, input_bobot_uts);
-        contentValues.put(myDbHelper.UAS_NILAI, input_nilai_uas);
-        contentValues.put(myDbHelper.UAS_BOBOT, input_bobot_uas);
+        if(title == null){
+            title = "0";
+        }else{
+            contentValues.put(myDbHelper.TITLE, title);
+        }
+        if(note == null){
+            note = "0";
+        }else {
+            contentValues.put(myDbHelper.NOTE, note);
+        }
+        if(input_nilai_saa1 == null){
+            input_nilai_saa1 = "0";
+        }else {
+            contentValues.put(myDbHelper.SAA1_NILAI, input_nilai_saa1);
+        }
+        if(input_bobot_saa1 == null){
+            input_bobot_saa1 = "0";
+        }else {
+            contentValues.put(myDbHelper.SAA1_BOBOT, input_bobot_saa1);
+        }
+        if(input_nilai_saa2 == null){
+            input_nilai_saa2 = "0";
+        }else {
+            contentValues.put(myDbHelper.SAA2_NILAI, input_nilai_saa2);
+        }
+        if(input_bobot_saa2 == null){
+            input_bobot_saa2 = "0";
+        }else {
+            contentValues.put(myDbHelper.SAA2_BOBOT, input_bobot_saa2);
+        }
+        if(input_nilai_saa3 == null){
+            input_nilai_saa3 = "0";
+        }else {
+            contentValues.put(myDbHelper.SAA3_NILAI, input_nilai_saa3);
+        }
+        if(input_bobot_saa3 == null){
+            input_bobot_saa3 = "0";
+        }else {
+            contentValues.put(myDbHelper.SAA3_BOBOT, input_bobot_saa3);
+        }
+        if(input_nilai_uts == null){
+            input_nilai_uts = "0";
+        }else {
+            contentValues.put(myDbHelper.UTS_NILAI, input_nilai_uts);
+        }
+        if(input_bobot_uts == null){
+            input_bobot_uts = "0";
+        }else {
+            contentValues.put(myDbHelper.UTS_BOBOT, input_bobot_uts);
+        }
+        if(input_nilai_uas == null){
+            input_nilai_uas = "0";
+        }else {
+            contentValues.put(myDbHelper.UAS_NILAI, input_nilai_uas);
+        }
+        if(input_bobot_uas == null){
+            input_bobot_uas = "0";
+        }else {
+            contentValues.put(myDbHelper.UAS_BOBOT, input_bobot_uas);
+        }
         contentValues.put(myDbHelper.ESTIMATED_SCORE, hitungestimate(input_nilai_saa1, input_bobot_saa1, input_nilai_saa2, input_bobot_saa2, input_nilai_saa3, input_bobot_saa3, input_nilai_uts, input_bobot_uts, input_nilai_uas, input_bobot_uas));
         contentValues.put(myDbHelper.FINAL_SCORE, hitunggrade(hitungestimate(input_nilai_saa1, input_bobot_saa1, input_nilai_saa2, input_bobot_saa2, input_nilai_saa3, input_bobot_saa3, input_nilai_uts, input_bobot_uts, input_nilai_uas, input_bobot_uas)));
         long id = dbb.insert(myDbHelper.TABLE_NAME, null, contentValues);

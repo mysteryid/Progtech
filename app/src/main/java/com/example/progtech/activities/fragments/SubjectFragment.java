@@ -41,7 +41,7 @@ public class SubjectFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_subject, container, false);
 
         db = new myDbAdapter(getActivity());
-        recyclerView = view.findViewById(R.id.rv_home);
+        recyclerView = view.findViewById(R.id.rv_subject);
 
         not = db.allPlayers();
         if (not.isEmpty()) {
@@ -76,7 +76,7 @@ public class SubjectFragment extends Fragment {
     public void onResume() {
         super.onResume();
         db = new myDbAdapter(getActivity());
-        recyclerView = view.findViewById(R.id.rv_home);
+        recyclerView = view.findViewById(R.id.rv_subject);
 
         not = db.allPlayers();
         if (not.isEmpty()) {
@@ -96,7 +96,7 @@ public class SubjectFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             db = new myDbAdapter(getActivity());
-            recyclerView = view.findViewById(R.id.rv_home);
+            recyclerView = view.findViewById(R.id.rv_subject);
 
             not = db.allPlayers();
             if (not.isEmpty()) {
