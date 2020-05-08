@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Educastion</string>
-    <string name="Home">home</string>
-    <string name="Subject">subject</string>
-    <string name="Tips">tips</string>
+    <string name="Home">Home</string>
+    <string name="Subject">Subject</string>
+    <string name="Tips">Tips</string>
     <string name="Add_Subject">Add Subject</string>
     <string name="Mata_Kuliah">Mata Kuliah</string>
     <string name="Jumlah_SKS">Jumlah SKS</string>
@@ -30,4 +30,7 @@
     <string name="ThreeSevenFive">3.75</string>
     <string name="ThreeFive">3.50</string>
     <string name="Three">3.00</string>
+    <string name="Mindmapping">Mind Mapping</string>
+    <string name="MindMapText">Mind Mapping adalah salah satu teknik belajar dengan cara menggambar sebuah diagram/peta konsep. Mind Mapping salah satu teknik belajar yang paling populer di kalangan remaja. Untuk mengetahui lebih lanjut tentang Mind Mapping, silahkan klik tombol di bawah ini.</string>
+    <string name="mm">Start Mind Mapping!</string>
 </resources>

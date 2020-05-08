@@ -78,6 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/input_nilai_saa1"
+            android:inputType="number"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -96,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Bobot"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,6 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/input_nilai_saa2"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,6 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Bobot"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,6 +151,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/input_nilai_saa3"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -164,6 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Bobot"
+            android:inputType="number"
             android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -182,6 +188,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/input_nilai_uts"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -199,6 +206,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Bobot"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -216,6 +224,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/input_nilai_uas"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -233,6 +242,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/Bobot"
+            android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 

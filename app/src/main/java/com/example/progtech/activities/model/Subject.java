@@ -184,7 +184,11 @@ public class Subject {
         }
 
         score85sementara = (double) (85 - (int) estim) / (double) (nbm / 100);
-        score85 = "" + score85sementara;
+        if (score85sementara <= 0) {
+            score85 = "target reached";
+        } else {
+            score85 = "" + (float) score85sementara;
+        }
 
         return score85;
     }
@@ -231,7 +235,11 @@ public class Subject {
         }
 
         score80sementara = (double) (80 - (int) estim) / (double) (nbm / 100);
-        score80 = "" + score80sementara;
+        if (score80sementara <= 0) {
+            score80 = "target reached";
+        } else {
+            score80 = "" + (float) score80sementara;
+        };
 
         return score80;
     }
@@ -278,7 +286,11 @@ public class Subject {
         }
 
         score75sementara = (double) (75 - (int) estim) / (double) (nbm / 100);
-        score75 = "" + score75sementara;
+        if (score75sementara <= 0) {
+            score75 = "target reached";
+        } else {
+            score75 = "" + (float) score75sementara;
+        }
 
         return score75;
     }
@@ -325,7 +337,11 @@ public class Subject {
         }
 
         score70sementara = (double) (70 - (int) estim) / (double) (nbm / 100);
-        score70 = "" + score70sementara;
+        if (score70sementara <= 0) {
+            score70 = "target reached";
+        } else {
+            score70 = "" + (float) score70sementara;
+        }
 
         return score70;
     }
